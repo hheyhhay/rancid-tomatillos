@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './data/movie-data'
+import movieData from './data/movie-data';
+import Movies from './Movies.js';
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,10 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Pooooooop</h1>
+      <main>
+        <h1>Pooooooop</h1>
+        <Movies movies={this.state.movies}/>
+      </main>
     )
   }
 }
