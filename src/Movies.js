@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card.js';
-// import '/Movies.css';
+import './Movies.css';
 
 const Movies = ({ movies }) => {
 
@@ -19,7 +19,6 @@ const Movies = ({ movies }) => {
   console.log(movies)
   return (
     <div className="movie-container">
-      <h2>Movies</h2>
       {movieCards}
     </div>
   )
