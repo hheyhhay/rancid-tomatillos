@@ -13,8 +13,8 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <h1>Pooooooop</h1>
+      <main className='App'>
+        <h2>Movies</h2>
         <Movies movies={this.state.movies}/>
       </main>
     )
