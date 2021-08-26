@@ -33,7 +33,7 @@ import './Card.css';
 const Card = (props) => {
   console.log(props)
   return (
-    <div className='movie-card' onClick ={() => props.showDetails()} >
+    <div className='movie-card' onClick ={() => props.showDetails(props.id)} >
       <img className='movie-poster' height='200px' src={props.posterPath}/>
       <div className='movie-text-front'>
         <h3 className='movie-title'>{props.title}</h3>

@@ -20,7 +20,7 @@ const Movies = ({ movies, showDetails }) => {
   })
   console.log(movies)
   return (
-    <div className="movie-container">
+    <div className="movie-container" >
       {movieCards}
     </div>
   )

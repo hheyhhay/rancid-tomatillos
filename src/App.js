@@ -11,9 +11,9 @@ class App extends Component {
       }
   }
 
-  showDetails = () => {
-    console.log('showDetails')
-    this.setState({movies: []})
+  showDetails = (id) => {
+    console.log(id)
+    // this.setState({movies: []})
     console.log(this.state)
   }
 
