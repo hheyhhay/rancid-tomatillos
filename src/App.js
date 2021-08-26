@@ -13,8 +13,15 @@ class App extends Component {
 
   showDetails = (id) => {
     console.log(id)
-    // this.setState({movies: []})
-    console.log(this.state)
+    const filteredMovie = this.state.movies.find(movie => movie.id === id)
+    console.log('filteredMovie', filteredMovie)
+    this.setState({movies: [filteredMovie]})
+  }
+  componentDidUpdate = () => {
+    console.log('>>>BUTTONCLICKED!')
+    return (
+      <p>CHANGED HERE </p>
+    )
   }
 
   render() {

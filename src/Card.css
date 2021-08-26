@@ -11,10 +11,13 @@
   width: 100%;
 }
 
-.movie-title {
+.movie-title, .movie-genres {
   padding-left: 10px;
 }
 
+.movie-genres {
+  color: grey;
+}
 .movie-rating {
   margin-right: 10px;
   margin-left: auto;

@@ -1,0 +1,21 @@
+.movie-details {
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.movie-title, .movie-genres {
+  padding-left: 10px;
+}
+
+.movie-genres {
+  color: grey;
+}
+.movie-rating {
+  margin-right: 10px;
+  margin-left: auto;
+}
