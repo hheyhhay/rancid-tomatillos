@@ -13,6 +13,13 @@ const Movies = ({ movies, showDetails }) => {
         title={movie['title']}
         averageRating={movie['average_rating']}
         releaseDate={movie['release_date']}
+        overview={movie['overview']}
+        genres={movie['genres']}
+        budget={movie['budget']}
+        revenue={movie['revenue']}
+        runtime={movie['runtime']}
+        tagline={movie['tagline']}
+
         showDetails={showDetails}
 
         />
