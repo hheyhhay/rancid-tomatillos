@@ -1,8 +1,30 @@
 import React from 'react';
-import Card from './Card.js';
+import Card from './Card';
+import Details from './Details';
 import './Movies.css';
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, showDetails }) => {
+
+  const movieDetails = movies.map(movie => {
+    return (
+      <Details
+        id={movie['id']}
+        posterPath={movie['poster_path']}
+        backdropPath={movie['backdrop_path']}
+        title={movie['title']}
+        averageRating={movie['average_rating']}
+        releaseDate={movie['release_date']}
+        overview={movie['overview']}
+        genres={movie['genres']}
+        budget={movie['budget']}
+        revenue={movie['revenue']}
+        runtime={movie['runtime']}
+        tagline={movie['tagline']}
+
+        showDetails={showDetails}
+        />
+    )
+  })
 
   const movieCards = movies.map(movie => {
     return (
@@ -13,13 +35,23 @@ const Movies = ({ movies }) => {
         title={movie['title']}
         averageRating={movie['average_rating']}
         releaseDate={movie['release_date']}
+        overview={movie['overview']}
+        genres={movie['genres']}
+        budget={movie['budget']}
+        revenue={movie['revenue']}
+        runtime={movie['runtime']}
+        tagline={movie['tagline']}
+
+        showDetails={showDetails}
+
         />
     )
   })
   console.log(movies)
   return (
-    <div className="movie-container">
-      {movieCards}
+    <div >
+      {movieCards.length === 1 && <div>{movieDetails}</div>}
+      {movieCards.length > 1 && <div className="movie-container">{movieCards}</div>}
     </div>
   )
 }

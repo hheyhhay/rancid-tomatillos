@@ -1,14 +1,16 @@
-.movie-card {
+.movie-details {
+  background-color: pink;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  width: 400px;
+
 }
 
-.movie-text-front {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
+.movie-backdrop {
+  height: 35%;
+  object-fit: cover;
 }
 
 .movie-title, .movie-genres {
