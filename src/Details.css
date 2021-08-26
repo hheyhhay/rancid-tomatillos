@@ -4,9 +4,14 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  
+  width: 400px;
+
 }
 
+.movie-backdrop {
+  height: 35%;
+  object-fit: cover;
+}
 
 .movie-title, .movie-genres {
   padding-left: 10px;
