@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card.js';
 import './Movies.css';
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, showDetails }) => {
 
   const movieCards = movies.map(movie => {
     return (
@@ -13,6 +13,8 @@ const Movies = ({ movies }) => {
         title={movie['title']}
         averageRating={movie['average_rating']}
         releaseDate={movie['release_date']}
+        showDetails={showDetails}
+
         />
     )
   })

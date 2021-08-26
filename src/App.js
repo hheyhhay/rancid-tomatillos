@@ -11,11 +11,19 @@ class App extends Component {
       }
   }
 
+  showDetails = () => {
+    console.log('showDetails')
+    this.setState({movies: []})
+    console.log(this.state)
+  }
+
   render() {
     return (
       <main className='App'>
         <h2>Movies</h2>
-        <Movies movies={this.state.movies}/>
+        <Movies movies={this.state.movies}
+                showDetails={this.showDetails}
+                />
       </main>
     )
   }
