@@ -20,3 +20,9 @@
 .movie-genres {
   color: grey;
 }
+
+.arrow-icon {
+  height: 40px;
+  margin: 0 10px 10px auto;
+
+}

@@ -3,7 +3,7 @@ import Card from './Card';
 import Details from './Details';
 import './Movies.css';
 
-const Movies = ({ movies, showDetails }) => {
+const Movies = ({ movies, showDetails, showAllMovies }) => {
 
   const movieDetails = movies.map(movie => {
     return (
@@ -21,7 +21,7 @@ const Movies = ({ movies, showDetails }) => {
         runtime={movie['runtime']}
         tagline={movie['tagline']}
 
-        showDetails={showDetails}
+        showAllMovies={showAllMovies}
         />
     )
   })
