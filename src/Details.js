@@ -8,7 +8,7 @@ const Details = (props) => {
       <img className='movie-backdrop' height='200px' src={props.backdropPath}/>
       <h3 className='movie-title'>{props.title}</h3>
       <p className='tagline'>{props.tagline}</p>
-      <p className='movie-rating'>⭐️ {props.averageRating.toFixed(1)}</p>
+      <p className='detail-rating'>⭐️ {props.averageRating.toFixed(1)}</p>
       <p className="movie-overview">{props.overview}</p>
       <p className='budget'>BUDGET: ${props.budget}</p>
       <p className='revenue'>REVENUE: ${props.revenue}</p>
