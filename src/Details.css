@@ -4,23 +4,19 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  width: 400px;
-
+  width: 700px;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.4);
 }
 
 .movie-backdrop {
-  height: 35%;
+  height: 40%;
   object-fit: cover;
 }
 
-.movie-title, .movie-genres {
+.movie-title, .movie-genres, .tagline, .detail-rating, .movie-overview, .budget, .revenue, .runtime, .movie-releaseDate {
   padding-left: 10px;
 }
 
 .movie-genres {
   color: grey;
-}
-.movie-rating {
-  margin-right: 10px;
-  margin-left: auto;
 }
