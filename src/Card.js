@@ -34,7 +34,7 @@ const Card = (props) => {
   console.log(props)
   return (
     <div className='movie-card' onClick ={() => props.showDetails(props.id)} >
-      <img className='movie-poster' height='200px' src={props.posterPath} alt={`${props.title} poster image`}/>
+      <img className='movie-poster' src={props.posterPath} alt={`${props.title} poster image`}/>
       <div className='movie-text-front'>
         <h3 className='movie-title'>{props.title}</h3>
         <p className='movie-genres'>{props.genres}</p>
