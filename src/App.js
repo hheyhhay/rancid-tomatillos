@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './data/movie-data';
 import Movies from './Movies.js';
-// import './images/back-arrow-1.svg'
 
 class App extends Component {
   constructor() {
     super();
       this.state = {
-        movies: movieData["movies"],
+        movies: [],
+        error: ''
       }
+  }
+
+  componentDidMount = () => {
+    this.showAllMovies();
   }
 
   showDetails = (id) => {
@@ -18,22 +21,20 @@ class App extends Component {
     console.log('filteredMovie', filteredMovie)
     this.setState({movies: [filteredMovie]})
   }
-  componentDidUpdate = () => {
-    console.log('>>>BUTTONCLICKED!')
-    return (
-      <p>CHANGED HERE </p>
-    )
-  }
 
   showAllMovies = () => {
-    console.log("CLICKED AT SHOW MOVIES")
-    this.setState({movies: movieData["movies"]})
+    const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies"
+    fetch(url)
+      .then(res => res.json())
+      .then(data => this.setState({movies: data.movies}))
+      .catch(error => this.setState({error: error}))
   }
 
   render() {
     return (
       <main className='App'>
         <h2>Movies</h2>
+        {this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3>}
         <Movies movies={this.state.movies}
                 showDetails={this.showDetails}
                 showAllMovies={this.showAllMovies}
