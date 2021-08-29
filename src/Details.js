@@ -3,7 +3,6 @@ import './Details.css';
 import './images/back-arrow.svg'
 
 const Details=(props) => {
-  console.log(props)
   return (
     <div className='movie-details' >
       <img className='movie-backdrop' height='200px' src={ props.backdropPath } alt={`${props.title} backdrop image`}/>
@@ -21,8 +20,3 @@ const Details=(props) => {
 }
 
 export default Details;
-// instead of props.showDetail we will have a props.goBack()
-// To be added to Details:
-// Take out: genres
-// leave-in: tagline, rating, title, overview, backdrop, releaseDate,
-//budget, revenue, runtime
