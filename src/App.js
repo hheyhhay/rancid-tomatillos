@@ -56,6 +56,8 @@ class App extends Component {
     fetch(url)
       .then(res => res.json())
       .then(data => this.setState({movies: [data.movie]}))
+      .catch(error => this.setState({error: error, isLoading: false}))
+
   }
 
   fetchData = (id) => {
