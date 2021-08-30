@@ -1,6 +1,6 @@
 import React from 'react';
 import './Details.css';
-import './images/back-arrow.svg'
+import './images/back-arrow.svg';
 
 const Details=(props) => {
   return (
