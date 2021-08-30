@@ -57,8 +57,11 @@ class App extends Component {
     return (
       <main className='App'>
         <nav className='nav-bar'>
-          <h2>Rancid Tomatillos</h2>
-          <p className='nav-subhead'>Find your next favorite movie</p>
+          <img src = { '/charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
+          <div className='nav-text'>
+            <h2 className='header'>Rancid Tomatillos</h2>
+            <p className='nav-subhead'>Find your next favorite movie</p>
+          </div>
         </nav>
         {this.state.isLoading && <h3 className='error'>Loading Movies...</h3>}
         {this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3>}

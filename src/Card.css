@@ -2,13 +2,21 @@
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
-  box-shadow: 0 1px 5px rgb(0 0 0 / 0.4);
+  height: 350px;
 }
 
 .movie-poster {
-  height: 400px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.5);
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+.movie-poster:hover {
+   opacity: 0.5;
+  object-fit: cover;
+
 }
 
 .movie-text-front {
