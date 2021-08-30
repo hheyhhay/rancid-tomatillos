@@ -43,11 +43,10 @@ const Movies = ({ movies, showDetails, showAllMovies }) => {
         tagline={movie['tagline']}
 
         showDetails={showDetails}
-
         />
     )
   })
-  console.log(movies)
+
   return (
     <div >
       {movieCards.length === 1 && <div>{movieDetails}</div>}

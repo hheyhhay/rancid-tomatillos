@@ -6,7 +6,7 @@
 }
 
 .movie-poster {
-  height: 220px;
+  height: 400px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -17,9 +17,10 @@
   justify-content: space-around;
   width: 100%;
 }
-
 .movie-title, .movie-genres {
   padding-left: 10px;
+  display: none;
+
 }
 
 .movie-genres {
@@ -28,4 +29,5 @@
 .movie-rating {
   margin-right: 10px;
   margin-left: auto;
+  display: none;
 }

@@ -2,4 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid blue;
+}
+.nav-bar {
+  border: 2px solid green;
+  font-family: 'Rampart One', cursive;
+  font-size: 40px;
+
+}
+
+.nav-subhead {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  padding: 0;
 }
