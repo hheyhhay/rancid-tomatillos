@@ -23,33 +23,8 @@ class App extends Component {
     .then(data => this.setState({movies: data.movies, isLoading: false}))
     .catch(error => this.setState({error: error, isLoading: false}))
 
-
-    // const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies"
-    // fetch(url)
-    //   .then(res => res.json())
-    //   .then(data => this.setState({movies: data.movies, isLoading: false}))
-    //   .catch(error => this.setState({error: error, isLoading: false}))
   }
-  //
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   console.log('this.state.movies', this.state.movies)
-  //   console.log('prevState', prevState.movies)
-  //   console.log('prevProps', prevProps)
-  //   if ( prevState.movies.length !== this.state.movies.length) {
-  //     console.log('>>>>here')
-  //     console.log('PROPSafterUPDATE', this.state.movies)
-  //     let urlId;
-  //     this.state.movies.forEach(movie => urlId = movie.id)
-  //
-  //     fetch(API + `/${urlId}`)
-  //     .then(res => res.json())
-  //     .then(data =>  this.setState({movies: [data.movie], isLoading: false}))
-  //     .catch(error => this.setState({error: error, isLoading: false}))
-  //
-  //   }
-  // }
 
-  //
 
   showDetails = (id) => { // eventListener triggered at Click
     let url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`;
@@ -61,7 +36,7 @@ class App extends Component {
   }
 
   fetchData = (id) => {
-    console.log("fetchData(id) is called")
+
     fetch(API + id)
     .then(res => res.json())
     .then(data => this.setState({movies: data.movies, isLoading: false}))
@@ -69,7 +44,7 @@ class App extends Component {
   }
 
   showAllMovies = () => {
-    console.log('show all movies is called')
+
     fetch(API + DEFAULT_QUERY)
     .then(res => res.json())
     .then(data => this.setState({movies: data.movies, isLoading: false}))
