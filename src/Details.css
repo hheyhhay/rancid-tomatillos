@@ -2,32 +2,62 @@
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: row;
-  height: 100%;
-  border: 2px solid green;
+  width: 100vw;
+  height: 93vh;
+  position: relative;
+}
+
+.movie-cover {
+  pointer-events: none;
+  z-index: 10;
+  position: absolute;
+  right: 10vw;
+  top: 50px;
+  height: 600px;
+  box-shadow: 0 5px 8px rgb(0 0 0 / 0.5);
 }
 
 .movie-backdrop {
-  width: 40%;
-  opacity: 0.7;
+  width: 100vw;
+  position: relative;
+  opacity: 15%;
   padding: 0;
   margin: 0;
-
+  object-fit: cover;
 }
 
 .movie-info {
-
+  top: 100px;
+  left: 10vw;
+  position: absolute;
+  width: 40vw;
 }
 
-.movie-title, .movie-genres, .tagline, .detail-rating, .movie-overview, .budget, .revenue, .runtime, .movie-releaseDate {
-  padding-left: 10px;
+.title-container {
+  border-bottom: 1px solid black;
 }
 
-.movie-genres {
-  color: grey;
+.movie-title {
+  margin-bottom: 10px;
 }
 
 .arrow-icon {
+  pointer-events: all;
+  position: absolute;
   height: 40px;
   margin: 0 10px 10px auto;
+  z-index: 10;
+  cursor: pointer;
+  color: #BA181B;
+}
 
+.arrow-icon:hover {
+  opacity: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+  .movie-cover {
+    width: 30vw;
+    height: auto;
+  }
 }
