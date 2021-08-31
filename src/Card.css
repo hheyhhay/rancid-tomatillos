@@ -3,6 +3,7 @@
   border-radius: 10px;
   display: flex;
   height: 350px;
+  cursor: pointer;
 }
 
 .movie-poster {
@@ -14,9 +15,8 @@
 }
 
 .movie-poster:hover {
-   opacity: 0.5;
+  opacity: 50%;
   object-fit: cover;
-
 }
 
 .movie-text-front {
@@ -24,20 +24,6 @@
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-}
-.movie-title, .movie-genres {
-  padding-left: 10px;
-  display: none;
-
-}
-
-.movie-genres {
-  color: grey;
-}
-.movie-rating {
-  margin-right: 10px;
-  margin-left: auto;
-  display: none;
 }
 
 @media screen and (max-width: 620px) {
