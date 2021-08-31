@@ -6,7 +6,7 @@
   height: 1000px;
   z-index: 1;
   position: relative;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .movie-cover {
@@ -16,6 +16,7 @@
   right: 100px;
   top: 50px;
   height: 600px;
+  box-shadow: 0 5px 8px rgb(0 0 0 / 0.5);
 }
 
 .movie-backdrop {
@@ -30,9 +31,17 @@
 
 .movie-info {
   top: 100px;
-  left: 20px;
+  left: 100px;
   position: absolute;
   width: 40vw;
+}
+
+.title-container {
+  border-bottom: 1px solid black;
+}
+
+.tagline {
+
 }
 
 .arrow-icon {
@@ -41,4 +50,9 @@
   height: 40px;
   margin: 0 10px 10px auto;
   z-index: 10;
+  cursor: pointer;
+}
+
+.arrow-icon:hover {
+  opacity: 50%;
 }
