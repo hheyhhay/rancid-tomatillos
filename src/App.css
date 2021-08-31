@@ -10,7 +10,6 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   font-family: 'Rampart One', cursive;
-  font-weight: 500;
   font-size: 40px;
   color: white;
   padding: 0;
@@ -25,7 +24,7 @@
   height: 65px;
   width: 65px;
   border-radius: 50%;
-  margin: 1%;
+  margin: 8px 15px;
   position: center;
   object-fit: cover;
 }
