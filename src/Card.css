@@ -39,3 +39,9 @@
   margin-left: auto;
   display: none;
 }
+
+@media screen and (max-width: 620px) {
+  .movie-card {
+    height: 40em;
+  }
+}
