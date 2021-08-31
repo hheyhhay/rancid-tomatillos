@@ -49,7 +49,6 @@ class App extends Component {
           <img src = { '/charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
           <div className='nav-text'>
             <h2 className='header'>Rancid Tomatillos</h2>
-            <p className='nav-subhead'>Find your next favorite movie</p>
           </div>
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
