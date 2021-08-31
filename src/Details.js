@@ -1,6 +1,8 @@
 import React from 'react';
 import './Details.css';
 import './images/back-arrow.svg';
+import { Route, Link } from "react-router-dom";
+
 
 const Details=(props) => {
   return (
@@ -16,10 +18,13 @@ const Details=(props) => {
         { props.revenue > 0 && <p className='revenue text'>REVENUE: $ { props.revenue }</p> }
         <p className='runtime text'>RUNTIME: { props.runtime } mins</p>
         <p className='movie-releaseDate text'>Released on: { props.releaseDate }</p>
-        <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' onClick={ () => props.showAllMovies() }/>
+        <Link to="/">
+          <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' onClick={ () => props.showAllMovies() }/>
+        </Link>
       </div>
       <img className='movie-cover' src={ props.posterPath } alt={ `${props.title}Poster` }/>
       <img className='movie-backdrop' src={ props.backdropPath } alt={ `${props.title }Backdrop` }/>
+
     </div>
   )
 }

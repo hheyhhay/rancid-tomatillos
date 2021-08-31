@@ -2,8 +2,11 @@ import React from 'react';
 import Card from './Card';
 import Details from './Details';
 import './Movies.css';
+import { Route, Link } from "react-router-dom";
+
 
 const Movies = ({ movies, showDetails, showAllMovies }) => {
+
   const movieDetails = movies.map(movie => {
     return (
       <Details
@@ -17,7 +20,7 @@ const Movies = ({ movies, showDetails, showAllMovies }) => {
         genres={ movie['genres'] }
         budget={ movie['budget'] }
         revenue={ movie['revenue'] }
-        runtime={ movie['runtime'] } 
+        runtime={ movie['runtime'] }
         tagline={ movie['tagline'] }
         showAllMovies={ showAllMovies }
         />
@@ -45,7 +48,7 @@ const Movies = ({ movies, showDetails, showAllMovies }) => {
   return (
     <div >
       { movieCards.length === 1 && <div>{movieDetails}</div> }
-      { movieCards.length > 1 && <div className='movie-container'>{movieCards}</div> }
+      { movieCards.length > 1 &&  <div className='movie-container'>{movieCards}</div> }
     </div>
   )
 }
