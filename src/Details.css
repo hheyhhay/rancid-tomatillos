@@ -3,17 +3,15 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 1000px;
-  z-index: 1;
+  height: 93vh;
   position: relative;
-  /* border: 2px solid green; */
 }
 
 .movie-cover {
   pointer-events: none;
   z-index: 10;
   position: absolute;
-  right: 100px;
+  right: 10vw;
   top: 50px;
   height: 600px;
   box-shadow: 0 5px 8px rgb(0 0 0 / 0.5);
@@ -26,12 +24,11 @@
   padding: 0;
   margin: 0;
   object-fit: cover;
-  /* z-index: -1; */
 }
 
 .movie-info {
   top: 100px;
-  left: 100px;
+  left: 10vw;
   position: absolute;
   width: 40vw;
 }
@@ -40,8 +37,8 @@
   border-bottom: 1px solid black;
 }
 
-.tagline {
-
+.movie-title {
+  margin-bottom: 10px;
 }
 
 .arrow-icon {
@@ -51,8 +48,16 @@
   margin: 0 10px 10px auto;
   z-index: 10;
   cursor: pointer;
+  color: #BA181B;
 }
 
 .arrow-icon:hover {
   opacity: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+  .movie-cover {
+    width: 30vw;
+    height: auto;
+  }
 }
