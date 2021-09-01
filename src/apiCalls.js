@@ -3,7 +3,8 @@ export function fetchMovies() {
 }
 
 export function fetchSingleMovie(id) {
-  return fetch(`https://rancid-tomatillos.herokaupp.com/api/v2/movies/${id}`).then(response => response.json())
+  console.log('fetchSingleMOvie')
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`).then(response => response.json())
 }
 // const fetchAllMovies = () => {
 //   const API = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";

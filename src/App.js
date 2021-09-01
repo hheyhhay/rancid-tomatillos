@@ -31,9 +31,8 @@ class App extends Component {
     console.log('ShowDetail is hit!')
 
     fetchSingleMovie(id)
-      .then(data => this.setState({ selectedMovie: data.movie })) // Needs to not be in Array?
+      .then(data => this.setState({ selectedMovie: data.movie }))
       .catch(error => this.setState({ error: error, isLoading: false }))
-
   }
 
 
@@ -47,7 +46,7 @@ class App extends Component {
             <h2 className='header'>Rancid Tomatillos</h2>
           </div>
         </nav>
-        { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> } // be symantic. don't use 'error'
+        { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
         { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
 
       <Route exact path="/">
@@ -58,11 +57,7 @@ class App extends Component {
             showAllMovies={ this.showAllMovies }
           />
       </Route>
-
-      <Route exact path={`/${selectedMovie.id}`} render={ () =>
-
-        <Details selectedMovie={ selectedMovie } /> } />
-
+      <Route exact path='/:id' render={ () => <Details selectedMovie={ selectedMovie } /> } />
       </main>
     )
   }

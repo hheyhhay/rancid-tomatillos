@@ -11,12 +11,12 @@ const Movies = ({ movies, showDetails, showAllMovies }) => {
 
 
   const movieCards = movies.map(movie => {
-    console.log(movie.posterPath)
-    console.log(movie)
+    // console.log(movie.posterPath)
+    // console.log(movie)
 
     return (
       <Link to={`/${movie['id']}`} className='movie-card'>
-         <img className='movie-poster' src={ movie["poster_path"] } alt={ `${movie["title"]} poster image` } onClick={ () => movie.showDetails(movie["id"]) }/>
+         <img className='movie-poster' src={ movie["poster_path"] } alt={ `${movie["title"]} poster image` } onClick={ () => showDetails(movie["id"]) }/>
       </Link>
     )
   })
