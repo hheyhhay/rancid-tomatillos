@@ -3,95 +3,69 @@ import './App.css';
 import Movies from './Movies.js';
 import { Route, Link } from "react-router-dom";
 import Card from './Card';
-import Details from './Details'
+import Details from './Details';
+import { fetchMovies, fetchSingleMovie} from './apiCalls';
+// import popcornImg from './public/charles-deluvio-I6mx55jXOvM-unsplash.jpg'; // asset file
 
-const API = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";
-const DEFAULT_QUERY = '';
 
 class App extends Component {
   constructor() {
     super();
       this.state = {
         movies: [],
+        selectedMovie: {},
         error: '',
         isLoading: false
       }
   }
 
   componentDidMount = () => {
-    this.showAllMovies();
+    fetchMovies()
+      .then(data => this.setState({ movies: data.movies, isLoading: false }))
+      .catch(error => this.setState({ error: error, isLoading: false }))
+
+
   }
 
   showDetails = (id) => { // eventListener triggered at Click
-    let url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: [data.movie] }))
+    console.log('ShowDetail is hit!')
+
+    fetchSingleMovie(id)
+      .then(data => this.setState({ selectedMovie: data.movie })) // Needs to not be in Array?
       .catch(error => this.setState({ error: error, isLoading: false }))
-    return
+
   }
 
-  fetchData = (id) => {
-    fetch(API + id)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: data.movies, isLoading: false }))
-      .catch(error => this.setState({ error: error, isLoading: false }))
-  }
-
-  showAllMovies = () => {
-    this.setState({ isLoading: true })
-    fetch(API + DEFAULT_QUERY)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: data.movies, isLoading: false }))
-      .catch(error => this.setState({ error: error, isLoading: false }))
-  }
 
   render() {
+    const { movies, selectedMovie, error, isLoading } = this.state;
     return (
       <main className='App'>
         <nav className='nav-bar'>
-          <img src = { '/charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
+          <img src = { 'charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
           <div className='nav-text'>
             <h2 className='header'>Rancid Tomatillos</h2>
           </div>
         </nav>
-        { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
+        { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> } // be symantic. don't use 'error'
         { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
 
-      <Route exact path="/" render={ () => {
-        return (
+      <Route exact path="/">
           <Movies id='movie'
-            movies={ this.state.movies }
+            movies={ movies }
+            // detail={ this.state.selectedMovie }
             showDetails={ this.showDetails }
             showAllMovies={ this.showAllMovies }
           />
-        )
-        }} />
+      </Route>
 
-      <Route exact path="/details/:id" render={( { match } ) => {
-        console.log(match.params)
-        // const currentMovie = this.showDetails(match.params.id)
-        // console.log(currentMovie)
-        // this.showDetails(match.params.id)
-        //console.log(this.state)
+      <Route exact path={`/${selectedMovie.id}`} render={ () =>
 
-        return (
-          <Card />
-        )
-        // const detailById = this.fetchData(match.params.id)
-      }}/>
+        <Details selectedMovie={ selectedMovie } /> } />
+
       </main>
     )
   }
 }
 
 export default App;
-
-// Not sure if we need a <Route > for home...
-//
-// <Movies id='movie'
-//         movies={ this.state.movies }
-//         showDetails={ this.showDetails }
-//         showAllMovies={ this.showAllMovies }
-//         />
-// <Route exact path='/home/home' render={} />
