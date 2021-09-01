@@ -1,7 +1,7 @@
 import React from 'react';
 import './Details.css';
 import './images/back-arrow.svg';
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Details = ( { selectedMovie:movie, showAllMovies }) => {
@@ -26,8 +26,8 @@ const Details = ( { selectedMovie:movie, showAllMovies }) => {
             <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' onClick={ () => showAllMovies() }/>
           </Link>
         </div>
-        <img className='movie-cover' src={ movie.poster_path } alt={ `${ movie.title }Poster` }/>
-        <img className='movie-backdrop' src={ movie.backdrop_path } alt={ `${ movie.title }Backdrop` }/>
+        <img className='movie-cover' src={ movie.poster_path } alt={ `${ movie.title } Poster` }/>
+        <img className='movie-backdrop' src={ movie.backdrop_path } alt={ `${ movie.title } Backdrop` }/>
       </div>
     )
   }

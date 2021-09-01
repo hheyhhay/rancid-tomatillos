@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Movies from './Movies.js';
-import { Route, Link } from "react-router-dom";
-import Card from './Card';
+import { Route } from "react-router-dom";
 import Details from './Details';
-import { fetchMovies, fetchSingleMovie} from './apiCalls';
+import { fetchMovies, fetchSingleMovie } from './apiCalls';
 
 class App extends Component {
   constructor() {
