@@ -1,63 +1,59 @@
 import React, { Component } from 'react';
 import './App.css';
 import Movies from './Movies.js';
-
-const API = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";
-const DEFAULT_QUERY = '';
+import { Route } from "react-router-dom";
+import Details from './Details';
+import { fetchMovies, fetchSingleMovie } from './apiCalls';
 
 class App extends Component {
   constructor() {
     super();
       this.state = {
         movies: [],
+        selectedMovie: {},
         error: '',
         isLoading: false
       }
   }
 
   componentDidMount = () => {
-    this.showAllMovies();
-  }
 
-  showDetails = (id) => { // eventListener triggered at Click
-    let url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: [data.movie] }))
+    fetchMovies()
+      .then(data => this.setState({ movies: data.movies, isLoading: false }))
       .catch(error => this.setState({ error: error, isLoading: false }))
   }
 
-  fetchData = (id) => {
-    fetch(API + id)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: data.movies, isLoading: false }))
+  showDetails = (id) => {
+
+    fetchSingleMovie(id)
+      .then(data => this.setState({ selectedMovie: data.movie }))
       .catch(error => this.setState({ error: error, isLoading: false }))
   }
 
   showAllMovies = () => {
-    this.setState({ isLoading: true })
-    fetch(API + DEFAULT_QUERY)
-      .then(res => res.json())
-      .then(data => this.setState({ movies: data.movies, isLoading: false }))
-      .catch(error => this.setState({ error: error, isLoading: false }))
+    this.setState({ selectedMovie: {} })
   }
 
   render() {
+    const { movies, selectedMovie, error, isLoading } = this.state;
     return (
       <main className='App'>
         <nav className='nav-bar'>
-          <img src = { '/charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
+          <img src = { 'charles-deluvio-I6mx55jXOvM-unsplash.jpg' } className="popcorn" alt="Spilt popcorn"/>
           <div className='nav-text'>
             <h2 className='header'>Rancid Tomatillos</h2>
           </div>
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
         { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
-        <Movies id='movie'
-                movies={ this.state.movies }
-                showDetails={ this.showDetails }
-                showAllMovies={ this.showAllMovies }
-                />
+
+      <Route exact path="/">
+          <Movies id='movie'
+            movies={ movies }
+            showDetails={ this.showDetails }
+          />
+      </Route>
+      <Route exact path='/:id' render={ () => <Details selectedMovie={ selectedMovie } showAllMovies={ this.showAllMovies } /> } />
       </main>
     )
   }
