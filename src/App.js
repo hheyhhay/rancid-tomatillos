@@ -5,8 +5,6 @@ import { Route, Link } from "react-router-dom";
 import Card from './Card';
 import Details from './Details';
 import { fetchMovies, fetchSingleMovie} from './apiCalls';
-// import popcornImg from './public/charles-deluvio-I6mx55jXOvM-unsplash.jpg'; // asset file
-
 
 class App extends Component {
   constructor() {
@@ -20,21 +18,22 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+
     fetchMovies()
       .then(data => this.setState({ movies: data.movies, isLoading: false }))
       .catch(error => this.setState({ error: error, isLoading: false }))
-
-
   }
 
-  showDetails = (id) => { // eventListener triggered at Click
-    console.log('ShowDetail is hit!')
+  showDetails = (id) => {
 
     fetchSingleMovie(id)
       .then(data => this.setState({ selectedMovie: data.movie }))
       .catch(error => this.setState({ error: error, isLoading: false }))
   }
 
+  showAllMovies = () => {
+    this.setState({ selectedMovie: {} })
+  }
 
   render() {
     const { movies, selectedMovie, error, isLoading } = this.state;
@@ -52,12 +51,10 @@ class App extends Component {
       <Route exact path="/">
           <Movies id='movie'
             movies={ movies }
-            // detail={ this.state.selectedMovie }
             showDetails={ this.showDetails }
-            showAllMovies={ this.showAllMovies }
           />
       </Route>
-      <Route exact path='/:id' render={ () => <Details selectedMovie={ selectedMovie } /> } />
+      <Route exact path='/:id' render={ () => <Details selectedMovie={ selectedMovie } showAllMovies={ this.showAllMovies } /> } />
       </main>
     )
   }
