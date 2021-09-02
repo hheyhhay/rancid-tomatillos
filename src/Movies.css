@@ -3,7 +3,34 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
+  width: 100%;
+}
 
+.movie-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  height: 350px;
+  cursor: pointer;
+}
+
+.movie-poster {
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.5);
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+.movie-poster:hover {
+  opacity: 50%;
+  object-fit: cover;
+}
+
+.movie-text-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -30,5 +57,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .movie-card {
+    height: 40em;
   }
 }
