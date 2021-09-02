@@ -3,39 +3,26 @@ import './App.css';
 import Movies from './Movies.js';
 import { Route } from "react-router-dom";
 import Details from './Details';
-import { fetchMovies, fetchSingleMovie } from './apiCalls';
+import { fetchMovies } from './apiCalls';
 
 class App extends Component {
   constructor() {
     super();
       this.state = {
         movies: [],
-        selectedMovie: {},
         error: '',
         isLoading: false
       }
   }
 
   componentDidMount = () => {
-
     fetchMovies()
       .then(data => this.setState({ movies: data.movies, isLoading: false }))
       .catch(error => this.setState({ error: error, isLoading: false }))
   }
 
-  showDetails = (id) => {
-
-    fetchSingleMovie(id)
-      .then(data => this.setState({ selectedMovie: data.movie }))
-      .catch(error => this.setState({ error: error, isLoading: false }))
-  }
-
-  showAllMovies = () => {
-    this.setState({ selectedMovie: {} })
-  }
-
   render() {
-    const { movies, selectedMovie, error, isLoading } = this.state;
+    const { movies, error, isLoading } = this.state;
     return (
       <main className='App'>
         <nav className='nav-bar'>
@@ -46,14 +33,19 @@ class App extends Component {
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
         { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
-
-      <Route exact path="/">
-          <Movies id='movie'
-            movies={ movies }
-            showDetails={ this.showDetails }
-          />
-      </Route>
-      <Route exact path='/:id' render={ () => <Details selectedMovie={ selectedMovie } showAllMovies={ this.showAllMovies } /> } />
+        <Route exact path="/">
+            <Movies id='movie'
+              movies={ movies }
+            />
+        </Route>
+        <Route exact path='/:id' render={ ({ match }) => {
+          const selectedID = match.params.id;
+          return <Details
+            selectedID={ selectedID }
+            showAllMovies={ this.showAllMovies }
+            />
+          }}
+        />
       </main>
     )
   }
