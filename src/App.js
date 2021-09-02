@@ -10,7 +10,6 @@ class App extends Component {
     super();
       this.state = {
         movies: [],
-        selectedMovie: {},
         error: '',
         isLoading: false
       }
@@ -22,12 +21,8 @@ class App extends Component {
       .catch(error => this.setState({ error: error, isLoading: false }))
   }
 
-  showAllMovies = () => {
-    this.setState({ selectedMovie: {} })
-  }
-
   render() {
-    const { movies, selectedMovie, error, isLoading } = this.state;
+    const { movies, error, isLoading } = this.state;
     return (
       <main className='App'>
         <nav className='nav-bar'>
@@ -38,20 +33,19 @@ class App extends Component {
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
         { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
-
-      <Route exact path="/">
-          <Movies id='movie'
-            movies={ movies }
-          />
-      </Route>
-      <Route exact path='/:id' render={ ({match}) => {
-        const selectedID = match.params.id;
-        const currentMovie = this.state.selectedMovie;
-        return <Details
-          selectedID={ selectedID }
-          showAllMovies={ this.showAllMovies }
-          />
-      } } />
+        <Route exact path="/">
+            <Movies id='movie'
+              movies={ movies }
+            />
+        </Route>
+        <Route exact path='/:id' render={ ({ match }) => {
+          const selectedID = match.params.id;
+          return <Details
+            selectedID={ selectedID }
+            showAllMovies={ this.showAllMovies }
+            />
+          }}
+        />
       </main>
     )
   }
