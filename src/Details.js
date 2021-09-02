@@ -3,6 +3,7 @@ import './Details.css';
 import './images/back-arrow.svg';
 import { Link } from "react-router-dom";
 import { fetchSingleMovie } from './apiCalls';
+const dayjs = require('dayjs');
 
 class Details extends Component {
   constructor() {
@@ -30,12 +31,12 @@ class Details extends Component {
                <h1 className='movie-title text'>{ movie.title }</h1>
              </div>
              { movie.tagline && <p className='tagline text'><em>{ `"${ movie.tagline }"` }</em></p> }
-             <p className='detail-rating text'>⭐️{ movie.average_rating.toFixed(1) }</p>
+             <p className='detail-rating text'>{`⭐️  ${ movie.average_rating.toFixed(1)} `}</p>
              <p className='movie-overview text'>{ movie.overview }</p>
-             { movie.budget > 0 && <p className='budget text'>BUDGET: $ { movie.budget }</p> }
-             { movie.revenue > 0 && <p className='revenue text'>REVENUE: $ { movie.revenue }</p> }
-             <p className='runtime text'>RUNTIME: { movie.runtime } mins</p>
-             <p className='movie-releaseDate text'>Released on: { movie.release_date }</p>
+             { movie.budget > 0 && <p className='budget text'>Budget: $ { movie.budget }</p> }
+             { movie.revenue > 0 && <p className='revenue text'>Revenue: $ { movie.revenue }</p> }
+             <p className='runtime text'>Runtime: { movie.runtime } mins</p>
+             <p className='movie-releaseDate text'>Released on { dayjs(movie.release_date).format('MMMM DD, YYYY') }</p>
              <Link to="/">
                <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
              </Link>
