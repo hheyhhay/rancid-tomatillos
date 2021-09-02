@@ -19,7 +19,6 @@ class Details extends Component {
   }
 
   render() {
-    const { showAllMovies, selectedID } = this.props;
     const movie = this.state.details;
     if (!movie.title) {
       return null;
@@ -38,7 +37,7 @@ class Details extends Component {
              <p className='runtime text'>RUNTIME: { movie.runtime } mins</p>
              <p className='movie-releaseDate text'>Released on: { movie.release_date }</p>
              <Link to="/">
-               <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' onClick={ () => showAllMovies() }/>
+               <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
              </Link>
            </div>
            <img className='movie-cover' src={ movie.poster_path } alt={ `${ movie.title } Poster` }/>
@@ -48,7 +47,5 @@ class Details extends Component {
      }
   }
 }
-
-
 
 export default Details;
