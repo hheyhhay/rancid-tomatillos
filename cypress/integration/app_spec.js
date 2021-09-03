@@ -6,10 +6,6 @@ describe('Feedback Loop login flows', () => {
     cy.get('.movie-container')
   })
 
-  // beforeEach(() => {
-  //   cy.visit('http://localhost:3000')
-  // });
-
   it('Should be able to select a move and see the movie details', () => {
     cy.get('[id=718444]')
       .click()
@@ -32,8 +28,3 @@ describe('Feedback Loop login flows', () => {
   )
   })
 });
-// fetch when you click on a movie, stub that click on a movie is the route you expect
-//
-// what to do when a user trys to put in their own id (404)
-//USe cypress to test if server is down
-//
