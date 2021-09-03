@@ -27,7 +27,7 @@ class Details extends Component {
     const movie = this.state.details;
 
     return (
-      <div >
+      <div className="detail-page">
       {this.state.isLoading && <h2>Movie hasn't loaded yet</h2>}
       {this.state.error && <div>
         <h2> { this.state.error } </h2>
