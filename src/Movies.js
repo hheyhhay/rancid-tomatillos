@@ -13,8 +13,8 @@ const Movies = ( { movies } ) => {
   })
 
   return (
-    <div >
-      { movieCards.length &&  <div className='movie-container'>{ movieCards }</div> }
+    <div className='movies-display'>
+      { movieCards.length >= 1 &&  <div className='movie-container'>{ movieCards }</div> }
     </div>
   )
 }
