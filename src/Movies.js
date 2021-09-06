@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Movies = ( { movies } ) => {
   const movieCards = movies.map(movie => {
     return (
-      <Link key={ movie['id'] } to={ `/${movie['id']}` } id={ movie['id'] } className='movie-card'>
+      <Link key={movie['id']} to={ `/${movie['id']}` } id={ movie['id'] } className='movie-card'>
          <img className='movie-poster' src={ movie["poster_path"] } alt={ `${movie["title"]} poster` }/>
       </Link>
     )
@@ -14,7 +14,7 @@ const Movies = ( { movies } ) => {
 
   return (
     <div className='movies-display'>
-      { movieCards.length >= 1 &&  <div className='movie-container'>{ movieCards }</div> }
+      { movieCards.length > 0 &&  <div className='movie-container'>{ movieCards }</div> }
     </div>
   )
 }
