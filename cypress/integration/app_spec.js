@@ -60,24 +60,12 @@ describe('Feedback Loop login flows', () => {
   it('Should display an error message if user inputs an false id in url', () => {
     cy.intercept({
       method: 'GET',
-      url: 'http://localhost:3000/0420'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/0420/'
     },
     {
       statusCode: 404,
     })
+    cy.visit('http://localhost:3000/0420')
+      .contains('h2', 'We don\'t have that movie yet, sorry!')
   });
 });
-
-
-// cy.intercept( "GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies',
-// {
-//   average_rating: 6.142857142857143,
-//   backdrop_path: "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
-//   id: 694919,
-//   poster_path: "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
-//   release_date: "2020-09-29",
-//   title: "Money Plane"
-// })
-//
-// // cy.visit('http://localhost:3000/')
-//   // .get('.movie-container').should('be.visible')
