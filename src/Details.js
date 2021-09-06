@@ -28,11 +28,11 @@ class Details extends Component {
       <div className="detail-page">
         {this.state.isLoadingDetails && <h2>Loading Movie Details...</h2>}
         {this.state.error &&
-          <div>
-            <h2>{ this.state.error }</h2>
-          <Link to="/">
-            <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
-          </Link>
+          <div className='error-page'>
+            <h2 className='error-message'>{ this.state.error }</h2>
+            <Link to="/">
+              <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
+            </Link>
           </div> }
        {movie.title && !this.state.error &&
          <div className='movie-details'>
@@ -60,7 +60,4 @@ class Details extends Component {
   }
  }
 
-
-        // <div className='movie-details'>
-  // </div>
 export default Details;
