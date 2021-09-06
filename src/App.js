@@ -16,11 +16,10 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-
     this.setState({ isLoading: true })
     fetchMovies()
       .then(data => this.setState({ movies: data.movies, isLoading: false }))
-      .catch(error => this.setState({ error: error, isLoading: false }))
+      .catch(error => this.setState({ error: error.message, isLoading: false }))
   }
 
   render() {
@@ -34,7 +33,7 @@ class App extends Component {
           </div>
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
-        { this.state.error && <h3 className='error'>Movies to failed to load. Please try again later!</h3> }
+        { this.state.error && <h3 className='error'>{ this.state.error }</h3> }
         <Route exact path="/">
             <Movies id='movie'
               movies={ movies }

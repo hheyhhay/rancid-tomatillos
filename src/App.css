@@ -47,3 +47,17 @@
   padding: 0;
   color: #B1A7A6;
 }
+
+@media screen and (max-width: 620px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .popcorn {
+    display: none!important;
+  }
+
+  .nav-bar {
+    height: 64px;
+  }
+}

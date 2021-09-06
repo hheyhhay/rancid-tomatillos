@@ -11,32 +11,31 @@ class Details extends Component {
       this.state = {
         details: {},
         error: '',
-        isLoading: false
+        isLoadingDetails: false
       }
   }
 
   componentDidMount() {
-    this.setState({ isLoading:true })
+    this.setState({ isLoadingDetails: true })
     fetchSingleMovie(this.props.selectedID)
-       .then(data => this.setState({ details: data.movie, isLoading: false }))
-       .catch(error => this.setState({ error: error.message, isLoading: false }))
+       .then(data => this.setState({ details: data.movie, isLoadingDetails: false }))
+       .catch(error => this.setState({ error: error.message, isLoadingDetails: false }))
   }
 
   render() {
-
     const movie = this.state.details;
-
     return (
       <div className="detail-page">
-      {this.state.isLoading && <h2>Movie hasn't loaded yet</h2>}
-      {this.state.error && <div>
-        <h2> { this.state.error } </h2>
-        <Link to="/">
-          <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
+        {this.state.isLoadingDetails && <h2>Loading Movie Details...</h2>}
+        {this.state.error &&
+          <div>
+            <h2>{ this.state.error }</h2>
+          <Link to="/">
+            <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
           </Link>
           </div> }
        {movie.title && !this.state.error &&
-        <div className='movie-details'>
+         <div className='movie-details'>
           <div className='movie-info'>
             <div className='title-container'>
               <h1 className='movie-title text'>{ movie.title }</h1>
@@ -51,10 +50,10 @@ class Details extends Component {
             <Link to="/">
               <img src={ '/back-arrow.svg' } className='arrow-icon' alt='Back arrow' />
             </Link>
+            </div>
           <img className='movie-cover' src={ movie.poster_path } alt={ `${ movie.title } Poster` }/>
           <img className='movie-backdrop' src={ movie.backdrop_path } alt={ `${ movie.title } Backdrop` }/>
-        </div>
-      </div>
+          </div>
     }
     </div>
     )
@@ -62,4 +61,6 @@ class Details extends Component {
  }
 
 
+        // <div className='movie-details'>
+  // </div>
 export default Details;
