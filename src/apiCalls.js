@@ -1,6 +1,11 @@
-export function fetchMovies() {
-
- return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies').then(response => response.json())
+export const fetchMovies = async () => {
+  let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies';
+  let response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Movies failed to load. Please try again later!')
+  }
+  let allMovies = await response.json();
+  return allMovies;
 }
 
 export const fetchSingleMovie = async (id) => {
