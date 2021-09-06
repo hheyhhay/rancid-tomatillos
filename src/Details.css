@@ -1,19 +1,16 @@
 .detail-page {
-  border: 2px solid green;
   display: flex;
-  position: relative;
-  width: 100vw;
-  height: 93vh;
+  justify-content: center;
   margin: 0;
 
 }
 .movie-details {
-  border: 10px solid blue;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: row;
   width: 100vw;
   height: 93vh;
+  position: relative;
   /* position: absolute; */
 }
 
@@ -28,7 +25,7 @@
 }
 
 .movie-backdrop {
-  width: 100vw;
+  height: 93vh;
   position: relative;
   opacity: 15%;
   padding: 0;
