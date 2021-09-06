@@ -21,14 +21,12 @@ describe('Feedback Loop login flows', () => {
   })
 
   it('Should perform a successful GET request for all movies upon page load', () => {
-    cy.intercept({
-      method: 'GET',
-      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
-    },
-    {
-      statusCode: 200
-    })
-    cy.visit('http://localhost:3000/')
+   cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/',
+   {
+     statusCode: 200
+   })
+   cy.visit('http://localhost:3000/')
+     .get('.movie-container').should('be.visible')
   });
 
   it('Should be able to select a movie and see the movie details', () => {
@@ -42,11 +40,13 @@ describe('Feedback Loop login flows', () => {
       .click()
     cy.intercept({
       method: 'GET',
-      url: 'http://localhost:3000/718444'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/71844/'
     },
     {
       statusCode: 200
     })
+    cy.visit('http://localhost:3000/718444')
+      .contains('.movie-title', 'Rogue')
   });
 
   it('Should be able to click back button and return to home page', () => {
@@ -67,3 +67,17 @@ describe('Feedback Loop login flows', () => {
     })
   });
 });
+
+
+// cy.intercept( "GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies',
+// {
+//   average_rating: 6.142857142857143,
+//   backdrop_path: "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
+//   id: 694919,
+//   poster_path: "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+//   release_date: "2020-09-29",
+//   title: "Money Plane"
+// })
+//
+// // cy.visit('http://localhost:3000/')
+//   // .get('.movie-container').should('be.visible')
