@@ -68,4 +68,11 @@ describe('Feedback Loop login flows', () => {
     cy.visit('http://localhost:3000/0420')
       .contains('h2', 'We don\'t have that movie yet, sorry!')
   });
+
+  it('Should be able to return to main page from error page', () => {
+    cy.visit('http://localhost:3000/0420')
+    cy.get('.arrow-icon')
+      .click()
+    cy.get('.movie-container').should('be.visible')
+  })
 });
