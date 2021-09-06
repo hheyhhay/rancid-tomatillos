@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   margin: 0;
+  background-color: #f5f3f4;
+
+
 
 }
 .movie-details {
@@ -60,6 +63,18 @@
 
 .arrow-icon:hover {
   opacity: 50%;
+}
+
+.error-page{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+}
+
+.error-message{
+  padding: 10% 0 10% 0;
 }
 
 @media screen and (max-width: 1000px) {
