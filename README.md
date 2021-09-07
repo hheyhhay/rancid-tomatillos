@@ -2,11 +2,12 @@
 
 ### Table of Contents
 - [Demo](#demo)
+- [Project Spec](#project-spec)
 - [Instructions](#instructions)
 - [Overview](#overview)
 - [Features](#features)
 - [Reflections](#project-reflection)
-- [Future Edition](#future-edition)
+- [Future Edition](#future-additions)
 - [Credits](#credits)
 
 ## Demo
@@ -20,6 +21,10 @@
 ![Details Error](https://user-images.githubusercontent.com/75854628/132268708-8f74870e-ac1d-4b64-ba21-c0c0208e3165.png)
 
 ![Main Page Error](https://user-images.githubusercontent.com/75854628/132268734-b4bccdb2-4ab6-4836-869e-d822525452ee.png)
+
+## Project Spec
+
+[Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 ## Instructions
 
@@ -54,7 +59,7 @@
 - Would like to build a deeper understanding of how Cypress works and all its features
 - Would like to understand more industry standards of how to organize react code and cypress 
 
-## Future Editions
+## Future Additions
 - For future editions, we would like to deploy the pages so users can easily access our page
 - Dropdown search menu
 - POST new ratings
