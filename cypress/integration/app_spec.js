@@ -1,4 +1,4 @@
-describe('Feedback Loop login flows', () => {
+describe('Movie details flow', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000')
