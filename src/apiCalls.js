@@ -9,13 +9,11 @@ export const fetchMovies = async () => {
 }
 
 export const fetchSingleMovie = async (id) => {
-  // try {
-    let url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`;
-    let response = await fetch(url);
-    if (!response.ok) {
-      throw new Error('We don\'t have that movie yet, sorry!')
-    }
-    let movieDetails = await response.json();
-    return movieDetails;
-
+  let url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`;
+  let response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('We don\'t have that movie yet, sorry!')
+  }
+  let movieDetails = await response.json();
+  return movieDetails;
 }
