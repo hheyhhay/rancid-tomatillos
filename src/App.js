@@ -14,7 +14,6 @@ class App extends Component {
         error: '',
         isLoading: false,
         filteredMovies: [],
-        inputValue: ''
       }
   }
 
@@ -31,10 +30,7 @@ class App extends Component {
 
   render() {
     const { movies, error, isLoading } = this.state;
-    console.log(this.filteredMovies)
-    // const filteredMovies = this.state.movies.filter(movie => {
-    //   return movie.title.includes(this.state.inputValue)
-    // })
+
     return (
       <main className='App'>
         <nav className='nav-bar'>

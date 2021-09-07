@@ -12,7 +12,6 @@ class Search extends Component {
   }
 
   movieFilterOnChange = (event) => {
-    console.log('hi from onChange', event.target.value);
     this.setState({
       inputValue: event.target.value
     })
@@ -24,7 +23,7 @@ class Search extends Component {
       return movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase())
     })
     if (!movieResults.length) {
-      this.props.stateChange("error", 'No movies!')
+      this.props.stateChange("error", 'Sorry, we don\'t have that movie')
       this.props.stateChange('filteredMovies', [])
     } else {
       this.props.stateChange("error", '')
@@ -43,14 +42,12 @@ class Search extends Component {
           id='header-search'
           value={this.inputValue}
           placeholder='Search Movies'
-          name='s'
           onChange={ this.movieFilterOnChange}
           onKeyUp={event => this.filterSearch(event)}
         />
       </form>
     )
   }
-
 }
 
 export default Search;
