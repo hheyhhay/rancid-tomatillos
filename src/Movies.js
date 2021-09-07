@@ -24,7 +24,7 @@ const Movies = ( { movies, filteredMovies } ) => {
 
   return (
     <div className='movies-display'>
-      {filteredCards.length > 0 && <div className='movie-container'>{ filteredCards }</div>}
+      { filteredCards.length > 0 && <div className='movie-container'>{ filteredCards }</div>}
       { movieCards.length > 0 && !filteredCards.length && <div className='movie-container'>{ movieCards }</div> }
     </div>
   )
