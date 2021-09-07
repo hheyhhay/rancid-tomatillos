@@ -1,9 +1,10 @@
 .movie-container {
-  padding: 5% 0 5% 0;
+  padding: 1% 0 5% 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   width: 100%;
+  min-height: 93vh;
 }
 
 .movie-card {
@@ -61,5 +62,6 @@
 
   .movie-card {
     height: 40em;
+    width: 90vw;
   }
 }

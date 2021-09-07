@@ -7,7 +7,8 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: ''
+      searchValue: '',
+      inputValue: ''
     }
   }
 
@@ -18,7 +19,6 @@ class Search extends Component {
   }
 
   filterSearch = (event) => {
-
     const movieResults = this.props.moviesSearch.filter(movie => {
       return movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase())
     })
@@ -38,12 +38,13 @@ class Search extends Component {
           <span className='visually-hidden'>Search Movies</span>
         </label>
         <input
+          className='search-input'
           type='text'
           id='header-search'
-          value={this.inputValue}
+          value={ this.inputValue }
           placeholder='Search Movies'
-          onChange={ this.movieFilterOnChange}
-          onKeyUp={event => this.filterSearch(event)}
+          onChange={ this.movieFilterOnChange }
+          onKeyUp={ event => this.filterSearch(event) }
         />
       </form>
     )

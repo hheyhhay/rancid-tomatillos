@@ -25,12 +25,11 @@ class App extends Component {
   }
 
   stateChange = (key, newValue) => {
-    this.setState({ [key]: newValue})
+    this.setState({ [key]: newValue })
   }
 
   render() {
     const { movies, error, isLoading } = this.state;
-
     return (
       <main className='App'>
         <nav className='nav-bar'>
@@ -41,23 +40,23 @@ class App extends Component {
         </nav>
         { this.state.isLoading && <h3 className='error'>Loading Movies...</h3> }
         { this.state.error && <h3 className='error'>{ this.state.error }</h3> }
-        <Search id='search'
-          moviesSearch={ movies }
-          inputValue={this.state.inputValue}
-          stateChange = {this.stateChange}
-          />
-
         <Route exact path="/">
-            <Movies id='movie'
-              movies={ movies }
-              filteredMovies={ this.state.filteredMovies }
-            />
+          <Search id='search'
+            moviesSearch={ movies }
+            inputValue={ this.state.inputValue }
+            stateChange = { this.stateChange }
+          />
+          <Movies id='movie'
+            movies={ movies }
+            filteredMovies={ this.state.filteredMovies }
+          />
         </Route>
         <Route exact path='/:id' render={ ({ match }) => {
           const selectedID = match.params.id;
           return <Details
             selectedID={ selectedID }
             showAllMovies={ this.showAllMovies }
+            stateChange = { this.stateChange }
             />
           }}
         />

@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+## Rancid Tomatillos - Pair Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Table of Contents
+- [Demo](#demo)
+- [Instructions](#instructions)
+- [Overview](#overview)
+- [Features](#features)
+- [Reflections](#project-reflection)
+- [Future Edition](#future-edition)
+- [Credits](#credits)
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+![GIF Demo](https://user-images.githubusercontent.com/75854628/132268966-6b9f5786-0f18-411b-baf4-b4824b2426b0.gif)
 
-### `npm start`
+![Main Page](https://user-images.githubusercontent.com/75854628/132268650-0e188b74-4f9d-4952-8562-df612cb77d20.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Details Page](https://user-images.githubusercontent.com/75854628/132268679-17972e5d-eeda-4f4a-bc7b-4c22431d4a8d.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Details Error](https://user-images.githubusercontent.com/75854628/132268708-8f74870e-ac1d-4b64-ba21-c0c0208e3165.png)
 
-### `npm test`
+![Main Page Error](https://user-images.githubusercontent.com/75854628/132268734-b4bccdb2-4ab6-4836-869e-d822525452ee.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instructions
 
-### `npm run build`
+- As a user, I should be able to navigate to main page and be see a collection of movies available. If I click on a movie, I am redirected to a new page that shows the movie's details. I am able to go back to the main page using the back arrow. If I want to search for movies, I can type into the search bar and if the movie is available it will show. I am able to navigate through my history using the back and forward arrows on the browser. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Overview
+- To access the website: 
+- clone down repo 
+- cd into repo
+- run ``` npm install ```
+- run ``npm start``
+- webpage will open in seperate browser
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Technologies used: 
+ - React
+ - HTML5
+ - CSS
+ - Cypress 
+ - Dayjs
+ - Router
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
+- Router to be able to navigate through the pages
+- Search bar to be able to search through movies 
+- 
 
-### `npm run eject`
+## Reflections
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Future Editions
+- For future editions, we would like to deploy the pages so users can easily access our page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Credits
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Contributors
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Hayley Dixon github.com/hheyhhay
+- Eric Li
 
-## Learn More
+#### Project Managers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Scott Ertmer
+- Kayla Gordon
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### 2021/09/06
+**[Back to top](#table-of-contents)**
