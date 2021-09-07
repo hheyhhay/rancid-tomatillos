@@ -23,11 +23,16 @@
 
 ## Instructions
 
-- As a user, I should be able to navigate to main page and be see a collection of movies available. If I click on a movie, I am redirected to a new page that shows the movie's details. I am able to go back to the main page using the back arrow. If I want to search for movies, I can type into the search bar and if the movie is available it will show. 
+- As a user, I should be able to navigate to main page and be see a collection of movies available. If I click on a movie, I am redirected to a new page that shows the movie's details. I am able to go back to the main page using the back arrow. If I want to search for movies, I can type into the search bar and if the movie is available it will show. I am able to navigate through my history using the back and forward arrows on the browser. 
 
 ## Overview
 - To access the website: 
-- clone down r
+- clone down repo 
+- cd into repo
+- run ``` npm install ``
+- run ``npm start``
+- webpage will open in seperate browser
+
 Technologies used: 
  - React
  - HTML5
@@ -39,11 +44,13 @@ Technologies used:
 ## Features
 - Router to be able to navigate through the pages
 - Search bar to be able to search through movies 
+- 
 
 ## Reflections
+  
 
 ## Future Editions
-- For future editions, we would like to deploy the pages
+- For future editions, we would like to deploy the pages so users can easily access our page
 
 ## Credits
 
