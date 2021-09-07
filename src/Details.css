@@ -79,7 +79,23 @@
 
 @media screen and (max-width: 1000px) {
   .movie-cover {
-    width: 30vw;
-    height: auto;
+    display: none!important;
+  }
+
+  .movie-info {
+    width: 80vw;
+    top: 270px;
+  }
+
+  .movie-backdrop {
+    width: 100vw;
+    height: 250px;
+    top: 20px;
+    opacity: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.5);
+  }
+
+  .movie-details {
+    height: 120vh;
   }
 }
