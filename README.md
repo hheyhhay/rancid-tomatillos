@@ -29,7 +29,7 @@
 - To access the website: 
 - clone down repo 
 - cd into repo
-- run ``` npm install ``
+- run ``` npm install ```
 - run ``npm start``
 - webpage will open in seperate browser
 
