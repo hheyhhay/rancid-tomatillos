@@ -6,6 +6,7 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Reflections](#project-reflection)
+- [Future Edition](#future-edition)
 - [Credits](#credits)
 
 ## Demo
@@ -22,19 +23,33 @@
 
 ## Instructions
 
-- As a user, I should be able to navigate to <link> and 
+- As a user, I should be able to navigate to main page and be see a collection of movies available. If I click on a movie, I am redirected to a new page that shows the movie's details. I am able to go back to the main page using the back arrow. If I want to search for movies, I can type into the search bar and if the movie is available it will show. 
 
 ## Overview
+- To access the website: 
+- clone down r
+Technologies used: 
+ - React
+ - HTML5
+ - CSS
+ - Cypress 
+ - Dayjs
+ - Router
 
 ## Features
+- Router to be able to navigate through the pages
+- Search bar to be able to search through movies 
 
 ## Reflections
+
+## Future Editions
+- For future editions, we would like to deploy the pages
 
 ## Credits
 
 #### Contributors
 
-- Hayley Dixon
+- Hayley Dixon github.com/hheyhhay
 - Eric Li
 
 #### Project Managers
