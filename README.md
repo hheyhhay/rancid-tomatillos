@@ -23,7 +23,11 @@
 
 ## Instructions
 
-- As a user, I should be able to navigate to main page and be see a collection of movies available. If I click on a movie, I am redirected to a new page that shows the movie's details. I am able to go back to the main page using the back arrow. If I want to search for movies, I can type into the search bar and if the movie is available it will show. I am able to navigate through my history using the back and forward arrows on the browser. 
+- As a user, I should be able to navigate to main page and be see a collection of movies available. 
+- If I click on a movie, I am redirected to a new page that shows the movie's details. 
+- I am able to go back to the main page using the back arrow. 
+- If I want to search for movies, I can type into the search bar and if the movie is available it will show. 
+- I am able to navigate through my history using the back and forward arrows on the browser. 
 
 ## Overview
 - To access the website: 
@@ -33,7 +37,7 @@
 - run ``npm start``
 - webpage will open in seperate browser
 
-Technologies used: 
+### Technologies used: 
  - React
  - HTML5
  - CSS
@@ -44,22 +48,24 @@ Technologies used:
 ## Features
 - Router to be able to navigate through the pages
 - Search bar to be able to search through movies 
-
+- Error Handling for search, 500 error for all movies, 404 error for movie details
 
 ## Reflections
 - Would like to build a deeper understanding of how Cypress works and all its features
-- Would like to understand more industry standards of how to organize react code and cypress
-  
+- Would like to understand more industry standards of how to organize react code and cypress 
 
 ## Future Editions
 - For future editions, we would like to deploy the pages so users can easily access our page
+- Dropdown search menu
+- POST new ratings
+- POST new movies
 
 ## Credits
 
 #### Contributors
 
-- Hayley Dixon github.com/hheyhhay
-- Eric Li
+- Hayley Dixon [Github](github.com/hheyhhay)
+- Eric Li [Github](github.com/ericli1996)
 
 #### Project Managers
 
