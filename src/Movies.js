@@ -21,7 +21,6 @@ const Movies = ( { movies, filteredMovies } ) => {
     })
   }
 
-
   return (
     <div className='movies-display'>
       { filteredCards.length > 0 && <div className='movie-container'>{ filteredCards }</div>}
