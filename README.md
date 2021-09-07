@@ -44,9 +44,11 @@ Technologies used:
 ## Features
 - Router to be able to navigate through the pages
 - Search bar to be able to search through movies 
-- 
+
 
 ## Reflections
+- Would like to build a deeper understanding of how Cypress works and all its features
+- Would like to understand more industry standards of how to organize react code and cypress
   
 
 ## Future Editions
