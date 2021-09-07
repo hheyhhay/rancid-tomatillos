@@ -40,17 +40,16 @@
   color: black;
 }
 
-.nav-subhead {
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  font-size: 20px;
-  padding: 0;
-  color: #B1A7A6;
-}
-
 @media screen and (max-width: 620px) {
+  .nav-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+  }
+
   .header {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .popcorn {
