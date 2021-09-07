@@ -33,9 +33,9 @@ class Search extends Component {
 
   render(){
     return (
-      <form action="/" method="get">
+      <form action="/" method="get" className='search-form'>
         <label htmlFor='header-search'>
-          <span className='visually-hidden'>Seach Movies</span>
+          <span className='visually-hidden'>Search Movies</span>
         </label>
         <input
           type='text'
