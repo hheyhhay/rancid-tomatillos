@@ -8,7 +8,7 @@ describe('Search feature flow', () => {
     cy.get('.search-form').contains('Search Movies')
   })
 
-  it.only('Should be able to type into search bar to find movie', () => {
+  it('Should be able to type into search bar to find movie', () => {
     cy.get('input[type="text"]')
       .type('Mulan')
 
